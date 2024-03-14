@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="22.1.5.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor">
+    <DetailView Id="DomainObject_DetailView">
+      <Items>
+        <PropertyEditor Id="Name" PropertyEditorType="XafPropertyEditors.Blazor.Server.Editors.CustomStringPropertyEditor" />
+      </Items>
+    </DetailView>
+  </Views>
+</Application>

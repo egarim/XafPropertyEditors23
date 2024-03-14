@@ -1,0 +1,30 @@
+﻿
+@using global::Blazor.Diagrams
+@using global::Blazor.Diagrams.Core.PathGenerators
+@using global::Blazor.Diagrams.Core.Routers
+@using global::Blazor.Diagrams.Options
+@inject IJSRuntime JS
+
+
+<div id="mydiv"></div>
+<div id="drawflow"></div>
+
+
+@code {
+    [Parameter]
+    public InputModel ComponentModel { get; set; }
+    public static RenderFragment Create(InputModel componentModel) => @<InputRenderer ComponentModel=@componentModel />;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+           // await JS.InvokeVoidAsync("InitDrawFlow");
+            await JS.InvokeVoidAsync("createTextboxWithBlackBackground", "mydiv");
+            await JS.InvokeVoidAsync("createCanvas", "drawflow");
+        }
+    }
+    private BlazorDiagram Diagram { get; set; } = null!;
+
+  
+   
+}
