@@ -16,6 +16,7 @@ namespace XafPropertyEditors.Module.BusinessObjects
 {
     public interface IPictureItem
     {
+        Guid Oid { get; }
         byte[] Image { get; }
         string Text { get; }
     }
