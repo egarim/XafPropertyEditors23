@@ -35,6 +35,7 @@ namespace XafPropertyEditors.Module.BusinessObjects
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
 
+        int intProperty;
         string name;
         [ModelDefault("PropertyEditorType", "XafPropertyEditors.Blazor.Server.Editors.CustomStringPropertyEditor")]
         [Size(SizeAttribute.DefaultStringMappingFieldSize)]
@@ -42,6 +43,13 @@ namespace XafPropertyEditors.Module.BusinessObjects
         {
             get => name;
             set => SetPropertyValue(nameof(Name), ref name, value);
+        }
+
+        
+        public int IntProperty
+        {
+            get => intProperty;
+            set => SetPropertyValue(nameof(IntProperty), ref intProperty, value);
         }
     }
 }
